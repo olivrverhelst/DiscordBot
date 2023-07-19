@@ -1,0 +1,2 @@
+A simple discord bot made in python. 
+The bot has three commands, a help command that shows what the other commands are, a try out pronouns command where the user will write their preferred pronouns and the bot uses those pronouns in a random text and the last command the bot replies with "(trans/gay/bi etc.) rights!!". The bot also replies with a definition of the idenitity mentioned. All the commands are triggered using the "!" symbol. 
