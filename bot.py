@@ -11,7 +11,7 @@ client = discord.Client()
 @bot.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Trans guy shit'))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Being gay and slaying'))
 
 
 def randomly(pronouns1, pronouns2, name):
@@ -24,7 +24,7 @@ def randomly(pronouns1, pronouns2, name):
 
 
 @bot.command()
-async def test(message, pronoun1, pronoun2, name):
+async def pronouns(message, pronoun1, pronoun2, name):
     await message.send('Hey {}, you want to try on {}/{} pronouns'.format(name, pronoun1, pronoun2))
     await message.channel.send(randomly(pronoun1, pronoun2, name))
 
@@ -50,10 +50,9 @@ async def on_message(message):
     if "gay" in message.content.lower():
         await message.channel.send("Gay rights!!", tts=True)
         await message.channel.send("Gay:\n"
-                                   "1 Adj. : experiencing attraction solely (or primarily) to some members of the same gender.\n"
-                                   "Can be used to refer to non-men who are attracted only to other non-men and non-women who are only attracted to non-women.\n\n"
-                                   "2 Adj. : an umbrella term used to refer to the queer community as a whole, \n"
-                                   "or as an individual identity label for anyone who is not straight")
+                                   "used in mainly two ways. \n"
+                                   "The first is for individuals solely attracted to the same gender, often men who only likes men. \n"
+                                   "The second use for the word is for any queer individual.")
 
     if "lesbian" in message.content.lower():
         await message.channel.send("Lesbian rights!!", tts=True)
@@ -63,42 +62,31 @@ async def on_message(message):
     if "bi" in message.content.lower():
         await message.channel.send("Bi rights!!", tts=True)
         await message.channel.send("Bisexual:\n"
-                                   "1 noun & adj. : a person who experiences attraction to some men and women.\n\n"
-                                   "2 adj. : a person who experiences attraction to some people of their gender and another gender.\n"
-                                   "Bisexual attraction does not have to be equally split, \n"
-                                   "or indicate a level of interest that is the same across the genders an individual may be attracted to. \n""")
+                                   "Term used for individuals who are attracted to two or more genders, often with a preference")
 
     if "pan" in message.content.lower():
         await message.channel.send("Pan rights!!", tts=True)
         await message.channel.send("Pansexual: \n"
-                                   "Adj. : a person who experiences sexual, romantic, physical, and/or spiritual attraction \n"
-                                   "for members of all gender identities/expressions, usually with no preference of  gender")
+                                   "Term used for people who are attracted to all gender without a preference")
 
     if "ace" in message.content.lower():
         await message.channel.send("Ace rights!!", tts=True)
         await message.channel.send("Asexual:\n"
-                                   "Adj. : experiencing little or no sexual attraction to others and/or a lack of interest in sexual relationships/behavior.\n"
-                                   "Asexuality exists on a continuum from people who experience no sexual attraction or have any desire for sex,\n"
-                                   "to those who experience low levels, or sexual attraction only under specific conditions.\n"
-                                   "Sometimes abbreviated to ace")
+                                   "Used for people who experience little to no sexual attraction")
 
     if "aro" in message.content.lower():
         await message.channel.send("Aro rights!!", tts=True)
         await message.channel.send("Aromantic:"
-                                   "Adj. : experiencing little or no romantic attraction to others and/or has a lack of interest in romantic relationships/behavior.\n"
-                                   "Aromanticism exists on a continuum from people who experience no romantic attraction or have any desire for romantic activities,\n"
-                                   "to those who experience low levels, or romantic attraction only under specific conditions.\n"
-                                   "Many of these different places on the continuum have their own identity labels. \n"
-                                   "Sometimes abbreviated to “aro” (pronounced like “arrow”).")
+                                   "Used for people who experience little to no romantic attraction")
 
 
 
 
 @bot.command()
 async def help(message):
-    await message.send("This bot is made so that you can try on new pronouns. \n"
-                       "To do that write: !test [pronoun1] [pronoun2] [name]. \n"
-                       "An example of how that could look like is: !test he them Alex")
+    await message.send("This bot has two different commands you could use. \n"
+                       "A pronouns command which allows you to try on new pronouns and a new name, this command is triggered by using '!pronouns [pronoun1] [pronoun2] [name]'\n"
+                       "The other command/s makes the bot say [identity] rights! and its belonging definition. To trigger this one use the command '![trans/gay/bi/pan/ace/aro]")
 
 
 bot.run("token")
